@@ -1,0 +1,65 @@
+.container{
+    width: 246px;
+    height: 265px;
+    border-radius: 40px 12px 40px 40px;
+    background-color: #F87070;
+    .name{
+        font-family: Rubik Mono One;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: 400;
+        margin: 15px auto;
+        width: max-content;
+    }
+    .heart{
+        position: relative;
+        left: 200px;
+        top: -40px;
+        cursor: pointer;;
+        width: 20px;
+        height: 20px;
+    }
+    .img{
+        position: relative;
+        width: min-content;
+        margin: -35px auto 0 auto;
+        .blur{
+            background-color: #FFFFFF;
+            width: 59px;
+            height: 59px;
+            filter: blur(15px);
+            position: inherit;
+            top: -90px;
+            left: 25px;
+        }
+        img{
+            position: inherit;
+            z-index: 1;
+            margin: 0 auto;
+            width: 110px;
+        }
+    }
+    .types{
+        width: min-content;
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        bottom: 50px;
+        margin: 0 auto;
+    }
+    .id{
+        font-family: Rubik Mono One;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 16px;
+        position: relative;
+        bottom: 30px;
+        margin: 0 auto;
+        width: min-content;
+        color: #FFFFFF;
+    }
+}

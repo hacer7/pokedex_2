@@ -1,0 +1,17 @@
+.container{
+    position: absolute;
+    width: 1250px;
+    height: 800px;
+    left: 61px;
+    top: 181px;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    .list{
+        margin: 30px auto;
+        width: 1100px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
