@@ -310,15 +310,15 @@ export interface Sprites {
   versions: Versions;
 }
 
-export interface Stat2 {
+export interface Stat {
   name: string;
   url: string;
 }
 
-export interface Stat {
+export interface Stats{
   base_stat: number;
   effort: number;
-  stat: Stat2;
+  stat: Stat;
 }
 
 export interface Type2 {
@@ -347,7 +347,7 @@ export interface IPokemon {
   past_types: any[];
   species: Species;
   sprites: Sprites;
-  stats: Stat[];
+  stats: Stats[];
   types: Type[];
   weight: number;
 }

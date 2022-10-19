@@ -1,33 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { toPokemon } from '../../models'
-import { useLazyGetSearchedPokemonsQuery } from '../../store/pokeApi/poke.api'
+import { useEffect, useState } from 'react'
 import { useAppSelector } from '../hooks/redux'
+import { useDebounce } from '../hooks/useDebounce'
 import PokemonItem from '../PokemonItem'
 import s from './style.module.scss'
 
 
 const FavouritePokemonList = () => {
-  const {favourite} = useAppSelector(state => state.pokedex)
-  const [fetchPokemons, {data}] = useLazyGetSearchedPokemonsQuery()
-  const [favPokes, setFavPokes] = useState<toPokemon[]>()
-
-  function handler(f: string){
-    const t = data?.filter(poke => poke.name === f)
-    return favPokes?.concat(t)
-  }
+  const {favourite, searchValue} = useAppSelector(state => state.pokedex)
+  const debounced = useDebounce(searchValue)
+  const [searched, setSearched] = useState<string[]>()
 
   useEffect(() => {
-    fetchPokemons(1154)
-  }, [])
-  
-  useEffect(() => {
-    console.log(handler(favourite[0]))
-  }, [data])
+    setSearched(favourite.filter(f => f.includes(debounced)))
+  }, [debounced])
 
   return (
     <div className={s.container}>
       <div className={s.list}>
-        {/* {favPokes?.map(f => <PokemonItem pokemon={f.url} key={f.url}/>)} */}
+        {!debounced ?
+        favourite?.map(f => <PokemonItem pokemon={f} key={f}/>):
+        debounced &&
+        searched?.map(f => <PokemonItem pokemon={f} key={f}/>)}
       </div>
     </div>
   )
