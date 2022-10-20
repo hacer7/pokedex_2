@@ -1,13 +1,10 @@
 import React from 'react'
 import FavouritePokemonList from '../../components/FavouritePokemonList'
-import Header from '../../components/Header'
+import Layout from '../../components/Layout/Layout'
 
 const FavouritesPage = () => {
   return (
-    <>
-    <Header/>
-    <FavouritePokemonList/>
-    </>
+    <FavouritePokemonList />
   )
 }
 

@@ -6,7 +6,7 @@ import s from './style.module.scss'
 const PokeStats = ({stats}: {stats:Stats[] | undefined}) => {
   return (
     <>
-      {stats?.map(stat => <React.Fragment key={stat.base_stat}><span>{stat.stat.name}</span><div className={s.statItem}>
+      {stats?.map(stat => <React.Fragment key={stat.stat.name}><span>{stat.stat.name}</span><div className={s.statItem}>
         <Progress percent={stat.base_stat} showInfo={false}/>
         <span>{stat.base_stat}</span></div></React.Fragment>)}
     </>

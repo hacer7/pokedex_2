@@ -4,13 +4,16 @@ import './App.css';
 import FavouritesPage from './pages/FavouritesPage';
 import HomePage from './pages/HomePage';
 import 'antd/dist/antd.css';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<HomePage/>}/>
-      <Route path='/favourites' element={<FavouritesPage/>}/>
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/favourites' element={<FavouritesPage />} />
+      </Routes>
+    </Layout>
   );
 }
 
