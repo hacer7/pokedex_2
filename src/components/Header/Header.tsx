@@ -38,8 +38,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isTypeFilter, setIsTypeFilter] = useState(true)
 
-  console.log(isTypeFilter)
-
   return (
     <div className={s.header}>
       <div className={s.title}>POKEDEX</div>
