@@ -1,4 +1,4 @@
-import { Modal } from "antd";
+import { Carousel, Modal } from "antd";
 import { FC, SetStateAction } from "react";
 import { IPokemon } from "../../models";
 import PokeStats from "../PokeStats";
@@ -17,7 +17,7 @@ const PokeInfo: FC<Props> = ({ isModalOpen, setIsModalOpen, pokemon }) => {
     arr[0] = arr[0].toUpperCase()
     return arr.join("")
   }
-  
+
   return (
     <>
       <Modal
@@ -29,7 +29,7 @@ const PokeInfo: FC<Props> = ({ isModalOpen, setIsModalOpen, pokemon }) => {
         <div className={s.img}>
           <span>#{pokemon?.id}</span>
           <img src={pokemon?.sprites.front_default ?? 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png'}
-          alt="" />
+            alt="" />
           <div>
             <p>height: {pokemon?.height}</p>
             <p>weight: {pokemon?.weight}</p>
@@ -37,10 +37,10 @@ const PokeInfo: FC<Props> = ({ isModalOpen, setIsModalOpen, pokemon }) => {
         </div>
         <div className={s.statsAndTypes}>
           <div className={s.stats}>
-            <PokeStats stats={pokemon?.stats}/>
+            <PokeStats stats={pokemon?.stats} />
           </div>
           <div className={s.types}>
-            {pokemon?.types.map(type => <TypeItem value={type.type.name} key={type.type.name}/>)}
+            {pokemon?.types.map(type => <TypeItem value={type.type.name} key={type.type.name} />)}
           </div>
         </div>
       </Modal>
